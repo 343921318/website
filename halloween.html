@@ -40,10 +40,11 @@
             }
         }
         #picture{
+            visibility: hidden;
             background-image: url(scarypumpkin.gif);
             width: 500px;
             height: 334px;
-            animation: ZoomIn 1s ;
+            /* animation: ZoomIn 1s ; */
         }
         @keyframes ZoomIn {
             from{
@@ -57,7 +58,19 @@
     </style>
 </head>
 <body>
-    <button>DO NOT CLICK!!!</button>
+    <button onclick="showPicture()">DO NOT CLICK!!!</button>
     <div id="picture"></div>
+    <audio id="theme"src="harry_potter_theme.mp3"></audio>
+    <audio id="laugh" src="cackle3.mp3"></audio>
+    <script>
+        function showPicture(){
+            picture.style.visibility= 'visible';
+            picture.style.animation='ZoomIn 1s forwards'
+            laugh.play()
+        }
+        window.onload=function(){
+             theme.play()
+        }
+    </script>
 </body>
 </html>
