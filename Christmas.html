@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry Chrismas!!!</title>
     <style>
-        body{
-            height:100vh;
+        body {
+            height: 100vh;
             background-color: rgb(255, 0, 0);
             display: flex;
             justify-content: center;
             align-items: center;
 
         }
-        button{
+
+        button {
             background-color: rgb(33, 255, 4);
             color: white;
-            width:300px;
+            width: 300px;
             height: 100px;
             font-size: 30px;
             animation: shaking 0.5s infinite;
         }
-        button:hover{
+
+        button:hover {
             background-color: rgb(11, 131, 27);
             animation: shaking 0.3s infinite;
         }
-           #picture{
+
+        #picture {
             visibility: hidden;
             background-image: url(christmas2.jpg);
+            background-size:cover;
             width: 500px;
             height: 334px;
         }
-   
     </style>
 </head>
+
 <body>
     <button onclick="showPicture()">Click To Have A Merry Christmas!</button>
     <div id="picture"></div>
     <audio id="Christmas" src="WeWishYouAMerryChristmas.mp3"></audio>
     <script>
-        function showPicture(){
-            picture.style.visibility= 'visible';
+        function showPicture() {
+            picture.style.visibility = 'visible';
 
-           Christmas.play()
+            Christmas.play()
         }
-        window.onload=function(){
-             theme.play()
+        window.onload = function () {
+            theme.play()
         }
     </script>
 </body>
+
 </html>
