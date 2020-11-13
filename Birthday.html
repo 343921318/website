@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!!!</title>
     <style>
-        body{
-            height:100vh;
+        body {
+            height: 100vh;
             background-color: rgb(93, 0, 255);
             display: flex;
             justify-content: center;
             align-items: center;
 
         }
-        button{
+
+        button {
             background-color: rgb(38, 0, 253);
             color: white;
-            width:300px;
+            width: 300px;
             height: 100px;
             font-size: 30px;
             animation: shaking 0.5s infinite;
         }
-        button:hover{
+
+        button:hover {
             background-color: rgb(0, 109, 252);
             animation: shaking 0.3s infinite;
         }
-           #picture{
+
+        #picture {
             visibility: hidden;
             background-image: url(birthday.jpg);
-            width: 500px;
-            height: 334px;
+            width: 362px;
+            height: 379px;
         }
-   
     </style>
 </head>
+
 <body>
     <button onclick="showPicture()">Click To Have A Happy Birthday!!!</button>
     <div id="picture"></div>
-    <audio id="birthday" src="happybirthday.mp3"></audio>
+    <audio id="birthday" src="HappyBirthday.mp3"></audio>
     <script>
-        function showPicture(){
-            picture.style.visibility= 'visible';
+        function showPicture() {
+            picture.style.visibility = 'visible';
+            birthday.play();
+        }
 
-           birthday.play()
-        }
-        window.onload=function(){
-             theme.play()
-        }
     </script>
 </body>
+
 </html>

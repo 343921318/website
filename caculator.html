@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 25px;
+            color: white;
+            font-family: 'Work Sans', sans-serif;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(90deg, rgb(154,8,255),rgb(235,121,103));
+        }
+        table {
+            border: none;
+            border-radius: 10px;
+            border-collapse: collapse;
+            background-color: #2440da;
+            background-image: linear-gradient(225deg, #0429fa 0%, #ff0af3 46%, #fdab07 100%);
+            box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+            background-repeat:no-repeat;
+
+            /* background-image: linear-gradient(rgb(44, 41, 247),rgb(255, 11, 194)); */
+            /* background-image: linear-gradient(rgb(243, 56, 56),rgb(104, 9, 107)) */
+            /* background-image: linear-gradient(rgb(5, 85, 16),rgb(4, 243, 144)) */
+        }
+        td {
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+        button {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            outline: none;
+        }
+        button:hover{
+            background-color: rgba(180, 83, 209, 0.5);
+        }
+        button:active{
+            background-color: rgba(243, 55, 196, 0.8);
+        }
+        #result {
+            height: 150px;
+            max-width: 284px;
+            text-align: left;
+            font-size: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            word-break:break-all ;
+        }
+        #formula {
+            height: 30px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td id="result" colspan="4"></td>
+            </tr>
+            <tr>
+                <td id="formula" colspan="4"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><button onclick="clean()">C</button></td>
+                <td><button onclick="input('(')">(</button></td>
+                <td><button onclick="input(')')">)</button></td>
+                <td><button onclick="backspace()"> ← </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('7')">7</button></td>
+                <td><button onclick="input('8')">8</button></td>
+                <td><button onclick="input('9')">9</button></td>
+                <td><button onclick="input('/')">÷</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('4')">4</button></td>
+                <td><button onclick="input('5')">5</button></td>
+                <td><button onclick="input('6')">6</button></td>
+                <td><button onclick="input('*')">×</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('1')">1</button></td>
+                <td><button onclick="input('2')">2</button></td>
+                <td><button onclick="input('3')">3</button></td>
+                <td><button onclick="input('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('0')">0</button></td>
+                <td><button onclick="input('.')">.</button></td>
+                <!-- <td><button onclick="input('=')">=</button></td> -->
+                <td><button onclick="calculate()">=</button></td>
+                <td><button onclick="input('+')">+</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function clean() {
+            formula.innerHTML = ""
+            result.innerHTML = ""
+            f = "";
+        }
+
+        let f = "";
+
+        function input(number) {
+            f = f + number
+            formula.innerHTML = f;
+        }
+        function calculate() {
+            try {
+                result.innerHTML = eval(f)
+            } catch (error) {
+
+                result.innerHTML = "Error";
+            }
+        }
+        function backspace () {
+            f=f.substring(0,f.length-1)
+            formula.innerHTML=f;
+        }
+    </script>
+</body>
+
+</html>
